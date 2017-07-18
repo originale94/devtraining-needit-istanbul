@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element label="Bénéficiaire" mandatory="true" max_length="32" name="u_beneficiaire" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Legal1" label="Que voulez vous" mandatory="true" max_length="40" name="u_quoi" type="string">
+            <choice>
+                <element label="Ressources humaines 1" sequence="0" value="hr1"/>
+                <element label="Ressources humaines 2" sequence="1" value="hr2"/>
+                <element label="Installations 1" sequence="2" value="Installations1"/>
+                <element label="Installations 2" sequence="3" value="Installations2"/>
+                <element label="Juridique 1" sequence="4" value="Juridique1"/>
+                <element label="Juridique 2" sequence="5" value="Juridique2"/>
+                <element label="Legal 1" sequence="6" value="Legal1"/>
+                <element label="Legal 2" sequence="7" value="Legal2"/>
+                <element label="Votre choix de département 1" sequence="8" value="Votre choix de département1"/>
+                <element label="Votre choix de département 2" sequence="9" value="Votre choix de département2"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Juridique" label="Type de demande" mandatory="true" max_length="40" name="u_type" type="string">
+            <choice>
+                <element label="Ressources humaines" sequence="0" value="[hr]"/>
+                <element label="Installations" sequence="1" value="Installations"/>
+                <element label="Juridique" sequence="2" value="Juridique"/>
+                <element label="Votre choix de département" sequence="3" value="Votre_choix"/>
+            </choice>
+        </element>
+        <element label="Pour quand ?" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
